@@ -1,0 +1,40 @@
+{
+  "name": "pokemon-pomodoro",
+  "version": "1.0.0",
+  "description": "Pokemon Pomodoro — Electron desktop widget",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.pokemon.pomodoro",
+    "productName": "Pokemon Pomodoro",
+    "files": [
+      "index.html",
+      "main.js",
+      "preload.js",
+      "sw.js",
+      "manifest.json",
+      "dittobg.png",
+      "icons/**"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icons/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "icons/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "icons/icon.png"
+    }
+  }
+}
